@@ -24,7 +24,7 @@ public class GemFireTest {
 
   protected void createClientCache() {
     ClientCacheFactory ccf = new ClientCacheFactory();
-    ccf.addPoolLocator("10.118.33.173", 10333);
+    ccf.addPoolLocator("localhost", 10333);
     ccf.setPoolSubscriptionEnabled(true);
 //    ccf.setPoolSubscriptionAckInterval(10);
     System.setProperty("gemfire.statistic-archive-file", "client_stats.gfs");
@@ -41,13 +41,13 @@ public class GemFireTest {
   }
 
   protected  void startLocator() throws Exception {
-    executeCommand(GFSH_LOCATION+ "gfsh start locator --name=locator --port=10333");
+    executeCommand(GFSH_LOCATION+ "gfsh start locator --name=locator --port=10333 --classpath=/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/lib/");
   }
 
   protected void startServer(String serverName, int serverPort, String arguments) throws Exception {
-    System.out.println("Starting server " + serverName + " with " + GFSH_LOCATION + "gfsh start server " + arguments + " --name=" + serverName + " --locators=10.118.33.173[10333]--server-port=" + serverPort + " --statistic-archive-file=stats.gfs");
+    System.out.println("Starting server " + serverName + " with " + GFSH_LOCATION + "gfsh start server " + arguments + " --name=" + serverName + " --locators=localhost[10333]--server-port=" + serverPort + " --statistic-archive-file=stats.gfs --classpath=/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/lib/");
 //    executeCommand(GFSH_LOCATION + "gfsh start server --name=" + serverName + " --locators=localhost[10333] --server-port=" + serverPort + " --cache-xml-file=./resources/cache.xml --statistic-archive-file=stats.gfs" + arguments);
-    executeCommand(GFSH_LOCATION + "gfsh start server --name=" + serverName + " " + arguments + " --locators=10.118.33.173[10333] --server-port=" + serverPort + " --log-level=fine --statistic-archive-file=stats.gfs" + " --cache-xml-file=/Users/jhuynh/Pivotal/geode-jh/src/main/resources/cache.xml ");
+    executeCommand(GFSH_LOCATION + "gfsh start server --name=" + serverName + " " + arguments + " --classpath=/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/lib/ --locators=localhost[10333] --server-port=" + serverPort + " --log-level=fine --statistic-archive-file=stats.gfs" + " --cache-xml-file=/Users/jhuynh/Pivotal/geode-jh/src/main/resources/cache.xml");
   }
 
   protected void stopServer(String dir) throws Exception {

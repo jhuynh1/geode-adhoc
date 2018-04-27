@@ -9,12 +9,14 @@
         http://geode.apache.org/schema/lucene/lucene-1.0.xsd"
         version="1.0">
 
+
+
     <disk-store name="myPersistentStore"/>
     <region name="region" refid="PARTITION">
         <lucene:index name="index">
-            <lucene:field name="a" analyzer="org.apache.lucene.analysis.core.KeywordAnalyzer"/>
-            <lucene:field name="b" analyzer="org.apache.lucene.analysis.core.SimpleAnalyzer"/>
-            <lucene:field name="c" analyzer="org.apache.lucene.analysis.standard.ClassicAnalyzer"/>
+            <lucene:field name="age" analyzer="org.apache.lucene.analysis.core.KeywordAnalyzer"/>
+            <lucene:field name="zip" analyzer="org.apache.lucene.analysis.core.SimpleAnalyzer"/>
+            <lucene:field name="firstName" analyzer="org.apache.lucene.analysis.standard.ClassicAnalyzer"/>
         </lucene:index>
     </region>
 </cache>
