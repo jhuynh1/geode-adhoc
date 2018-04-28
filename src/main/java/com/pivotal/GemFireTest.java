@@ -18,7 +18,7 @@ public class GemFireTest {
 
   private ClientCache cache;
 
-  private static String GFSH_LOCATION = "/Users/jhuynh/Pivotal/gemfire/geode-fork/geode-assembly/build/install/apache-geode/bin/";
+  private static String GFSH_LOCATION = "/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/bin/";
 
   public GemFireTest() {}
 
