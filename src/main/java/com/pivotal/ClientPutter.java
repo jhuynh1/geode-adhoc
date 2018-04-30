@@ -24,7 +24,7 @@ public class ClientPutter {
 
     int numPut = 0;
     try {
-      for (int i = 0; i < 10000000; i++) {
+      for (int i = 0; i < 17; i++) {
         numPut++;
         region.put(i, new SomeObject(i));
         if (i % 100 == 0) {

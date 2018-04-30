@@ -47,7 +47,7 @@ public class GemFireTest {
   protected void startServer(String serverName, int serverPort, String arguments) throws Exception {
     System.out.println("Starting server " + serverName + " with " + GFSH_LOCATION + "gfsh start server " + arguments + " --name=" + serverName + " --locators=localhost[10333]--server-port=" + serverPort + " --statistic-archive-file=stats.gfs --classpath=/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/lib/");
 //    executeCommand(GFSH_LOCATION + "gfsh start server --name=" + serverName + " --locators=localhost[10333] --server-port=" + serverPort + " --cache-xml-file=./resources/cache.xml --statistic-archive-file=stats.gfs" + arguments);
-    executeCommand(GFSH_LOCATION + "gfsh start server --name=" + serverName + " " + arguments + " --classpath=/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/lib/ --locators=localhost[10333] --server-port=" + serverPort + " --log-level=fine --statistic-archive-file=stats.gfs" + " --cache-xml-file=/Users/jhuynh/Pivotal/geode-jh/src/main/resources/cache.xml");
+    executeCommand(GFSH_LOCATION + "gfsh start server --name=" + serverName + " " + arguments + " --classpath=/Users/jhuynh/Pivotal/memcheck/apache-geode-1.7.0-SNAPSHOT/lib/ --locators=localhost[10333] --server-port=" + serverPort + " --statistic-archive-file=stats.gfs" + " --cache-xml-file=/Users/jhuynh/Pivotal/geode-jh/src/main/resources/cache-no-index.xml");
   }
 
   protected void stopServer(String dir) throws Exception {

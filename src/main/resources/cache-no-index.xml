@@ -13,14 +13,5 @@
 
     <disk-store name="myPersistentStore"/>
     <region name="region" refid="PARTITION">
-        <lucene:index name="index">
-            <lucene:field name="age"/>
-            <lucene:field name="address"/>
-            <lucene:field name="firstName"/>
-            <lucene:field name="lastName"/>
-            <lucene:field name="alias"/>
-            <lucene:field name="telephone"/>
-            <lucene:field name="zip"/>
-        </lucene:index>
     </region>
 </cache>
